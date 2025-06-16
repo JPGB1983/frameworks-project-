@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs-to-be-Done Framework</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Jobs-to-be-Done Framework</h1>
+            <p>Comprende las motivaciones profundas de tus usuarios</p>
+        </div>
+
+        <form id="jobsForm">
+            <!-- Información del Proyecto -->
+            <div class="framework-section">
+                <h2 class="section-title">📋 Información del Proyecto</h2>
+
+                <div class="form-group">
+                    <label for="proyecto">Proyecto:</label>
+                    <input type="text" id="proyecto" name="proyecto" placeholder="Nombre del proyecto">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha" name="fecha">
+                </div>
+
+                <div class="form-group">
+                    <label for="equipo">Equipo:</label>
+                    <input type="text" id="equipo" name="equipo" placeholder="Miembros del equipo">
+                </div>
+
+                <div class="form-group">
+                    <label for="persona_segmento">Persona/Segmento:</label>
+                    <input type="text" id="persona_segmento" name="persona_segmento" placeholder="Persona o segmento objetivo">
+                </div>
+            </div>
+
+            <!-- Job Statement Principal -->
+            <div class="framework-section">
+                <h2 class="section-title">🎯 Job Statement Principal</h2>
+
+                <div class="form-group">
+                    <label>Estructura: Cuando [situación/contexto] quiero [acción/trabajo a realizar] para poder [resultado deseado]</label>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Ejemplo:</strong></label>
+                    <p style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        Cuando gestiono múltiples proyectos, quiero tener un dashboard centralizado para poder monitorear el progreso y asignar recursos de manera eficiente
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label for="job_statement">Tu Job Statement:</label>
+                    <textarea id="job_statement" name="job_statement" placeholder="Cuando [situación/contexto] quiero [acción/trabajo a realizar] para poder [resultado deseado]"></textarea>
+                </div>
+            </div>
+
+            <!-- Análisis del Trabajo -->
+            <div class="framework-section">
+                <h2 class="section-title">🔍 Análisis del Trabajo (Job)</h2>
+
+                <!-- Trabajo Funcional -->
+                <div class="form-group">
+                    <label for="trabajo_funcional"><strong>1. Trabajo Funcional</strong></label>
+                    <label for="trabajo_funcional">¿Qué tarea práctica necesita realizar el usuario?</label>
+                    <textarea id="trabajo_funcional" name="trabajo_funcional" placeholder="Describe la tarea práctica y concreta que el usuario necesita completar"></textarea>
+                </div>
+
+                <!-- Trabajo Emocional -->
+                <div class="form-group">
+                    <label><strong>2. Trabajo Emocional</strong></label>
+                    <label>¿Cómo quiere sentirse el usuario al completar este trabajo?</label>
+
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emocional_seguro" name="emocional_seguro">
+                            <label for="emocional_seguro">Seguro</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emocional_confiado" name="emocional_confiado">
+                            <label for="emocional_confiado">Confiado</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emocional_tranquilo" name="emocional_tranquilo">
+                            <label for="emocional_tranquilo">Tranquilo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emocional_productivo" name="emocional_productivo">
+                            <label for="emocional_productivo">Productivo</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emocional_valorado" name="emocional_valorado">
+                            <label for="emocional_valorado">Valorado</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="emocional_otro" name="emocional_otro">
+                            <label for="emocional_otro">Otro</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="trabajo_emocional_desc" name="trabajo_emocional_desc" placeholder="Describe cómo quiere sentirse el usuario y por qué es importante"></textarea>
+                    </div>
+                </div>
+
+                <!-- Trabajo Social -->
+                <div class="form-group">
+                    <label for="trabajo_social"><strong>3. Trabajo Social</strong></label>
+                    <label for="trabajo_social">¿Cómo quiere ser percibido por otros al hacer este trabajo?</label>
+                    <textarea id="trabajo_social" name="trabajo_social" placeholder="Describe cómo quiere ser visto por colegas, jefes, amigos, familia, etc."></textarea>
+                </div>
+            </div>
+
+            <!-- Contexto y Circunstancias -->
+            <div class="framework-section">
+                <h2 class="section-title">📊 Contexto y Circunstancias</h2>
+
+                <div class="form-group">
+                    <label for="situacion_actual"><strong>Situación Actual</strong></label>
+                    <label for="situacion_actual">¿En qué contexto surge esta necesidad?</label>
+                    <textarea id="situacion_actual" name="situacion_actual" placeholder="Describe el contexto y las circunstancias que motivan este trabajo"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Frecuencia</strong></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="freq_diario" name="frecuencia" value="diario">
+                            <label for="freq_diario">Diario</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="freq_semanal" name="frecuencia" value="semanal">
+                            <label for="freq_semanal">Semanal</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="freq_mensual" name="frecuencia" value="mensual">
+                            <label for="freq_mensual">Mensual</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="freq_ocasional" name="frecuencia" value="ocasional">
+                            <label for="freq_ocasional">Ocasional</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="freq_una_vez" name="frecuencia" value="una_vez">
+                            <label for="freq_una_vez">Una sola vez</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><strong>Urgencia</strong></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="urg_muy_urgente" name="urgencia" value="muy_urgente">
+                            <label for="urg_muy_urgente">Muy urgente</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="urg_urgente" name="urgencia" value="urgente">
+                            <label for="urg_urgente">Urgente</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="urg_moderada" name="urgencia" value="moderada">
+                            <label for="urg_moderada">Moderada</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="urg_baja" name="urgencia" value="baja">
+                            <label for="urg_baja">Baja urgencia</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fuerzas del Progreso -->
+            <div class="framework-section">
+                <h2 class="section-title">💡 Fuerzas del Progreso (Forces of Progress)</h2>
+
+                <div class="job-forces">
+                    <div class="force-card push">
+                        <h4>Push (Empuje) - ¿Qué los empuja a buscar algo nuevo?</h4>
+                        <p><strong>📌 Problemas o frustraciones actuales</strong></p>
+                        <textarea id="push_forces" name="push_forces" placeholder="Describe los problemas, frustraciones o limitaciones de la situación actual"></textarea>
+                    </div>
+
+                    <div class="force-card pull">
+                        <h4>Pull (Tracción) - ¿Qué los atrae hacia tu solución?</h4>
+                        <p><strong>🎯 Beneficios o resultados deseados</strong></p>
+                        <textarea id="pull_forces" name="pull_forces" placeholder="Describe los beneficios, resultados o mejoras que esperan obtener"></textarea>
+                    </div>
+
+                    <div class="force-card anxiety">
+                        <h4>Anxiety (Ansiedad) - ¿Qué les preocupa del cambio?</h4>
+                        <p><strong>⚠️ Miedos o reservas sobre adoptar algo nuevo</strong></p>
+                        <textarea id="anxiety_forces" name="anxiety_forces" placeholder="Describe las preocupaciones, miedos o riesgos percibidos del cambio"></textarea>
+                    </div>
+
+                    <div class="force-card habit">
+                        <h4>Habit (Hábito) - ¿Qué los mantiene en su estado actual?</h4>
+                        <p><strong>🔄 Razones por las que siguen con la solución actual</strong></p>
+                        <textarea id="habit_forces" name="habit_forces" placeholder="Describe los hábitos, inercia o razones para mantener el status quo"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resultado Exitoso -->
+            <div class="framework-section">
+                <h2 class="section-title">🏁 Resultado Exitoso</h2>
+
+                <div class="form-group">
+                    <label for="resultado_exitoso">¿Cómo sabrá el usuario que el trabajo está bien hecho?</label>
+                    <textarea id="resultado_exitoso" name="resultado_exitoso" placeholder="Define los criterios de éxito desde la perspectiva del usuario"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="indicadores_exito">Indicadores de éxito:</label>
+                    <textarea id="indicadores_exito" name="indicadores_exito" placeholder="Lista los indicadores específicos que muestran que el trabajo fue completado exitosamente"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="metricas_clave">Métricas clave:</label>
+                    <textarea id="metricas_clave" name="metricas_clave" placeholder="Define las métricas cuantificables que indican el éxito"></textarea>
+                </div>
+            </div>
+
+            <!-- Obstáculos y Barreras -->
+            <div class="framework-section">
+                <h2 class="section-title">🚧 Obstáculos y Barreras</h2>
+
+                <div class="form-group">
+                    <label for="barreras_actuales">Barreras Actuales</label>
+                    <textarea id="barreras_actuales" name="barreras_actuales" placeholder="Describe los obstáculos que impiden realizar el trabajo efectivamente"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="soluciones_intentadas">Soluciones Intentadas</label>
+                    <textarea id="soluciones_intentadas" name="soluciones_intentadas" placeholder="Lista las soluciones que ya han probado y por qué no funcionaron"></textarea>
+                </div>
+            </div>
+
+            <!-- Insights y Oportunidades -->
+            <div class="framework-section">
+                <h2 class="section-title">💭 Insights y Oportunidades</h2>
+
+                <div class="form-group">
+                    <label for="principales_insights">Principales Insights:</label>
+                    <textarea id="principales_insights" name="principales_insights" placeholder="Documenta los descubrimientos más importantes sobre este job"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="oportunidades_innovacion">Oportunidades de Innovación:</label>
+                    <textarea id="oportunidades_innovacion" name="oportunidades_innovacion" placeholder="Identifica oportunidades para innovar y mejorar la experiencia"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="proximos_pasos">Próximos Pasos:</label>
+                    <textarea id="proximos_pasos" name="proximos_pasos" placeholder="Define las acciones concretas a seguir basadas en este análisis"></textarea>
+                </div>
+            </div>
+
+            <!-- Jerarquía de Jobs -->
+            <div class="framework-section">
+                <h2 class="section-title">📈 Jerarquía de Jobs</h2>
+
+                <div class="job-hierarchy">
+                    <table class="hierarchy-table" id="hierarchyTable">
+                        <thead>
+                            <tr>
+                                <th>Nivel</th>
+                                <th>Job</th>
+                                <th>Descripción</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" placeholder="Aspiracional" style="width: 100%; border: none; padding: 8px;" value="Aspiracional"></td>
+                                <td><input type="text" placeholder="Job aspiracional" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><input type="text" placeholder="Descripción del job aspiracional" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><button type="button" onclick="removeHierarchyRow(this)" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Eliminar</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="Estratégico" style="width: 100%; border: none; padding: 8px;" value="Estratégico"></td>
+                                <td><input type="text" placeholder="Job estratégico" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><input type="text" placeholder="Descripción del job estratégico" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><button type="button" onclick="removeHierarchyRow(this)" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Eliminar</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="Táctico" style="width: 100%; border: none; padding: 8px;" value="Táctico"></td>
+                                <td><input type="text" placeholder="Job táctico" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><input type="text" placeholder="Descripción del job táctico" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><button type="button" onclick="removeHierarchyRow(this)" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Eliminar</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="Funcional" style="width: 100%; border: none; padding: 8px;" value="Funcional"></td>
+                                <td><input type="text" placeholder="Job funcional" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><input type="text" placeholder="Descripción del job funcional" style="width: 100%; border: none; padding: 8px;"></td>
+                                <td><button type="button" onclick="removeHierarchyRow(this)" style="background: #e74c3c; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer;">Eliminar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <button type="button" onclick="addHierarchyRow()" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 15px;">+ Agregar Nivel</button>
+                </div>
+
+                <p style="margin-top: 15px; font-style: italic; color: #666;">
+                    Framework creado siguiendo las mejores prácticas de Clayton Christensen, Tony Ulwick y Bob Moesta
+                </p>
+            </div>
+
+            <!-- Recursos Adicionales -->
+            <div class="framework-section">
+                <h2 class="section-title">📚 Recursos Adicionales</h2>
+
+                <div class="form-group">
+                    <label for="entrevistas_realizadas">Entrevistas realizadas:</label>
+                    <input type="text" id="entrevistas_realizadas" name="entrevistas_realizadas" placeholder="Número de personas entrevistadas">
+                </div>
+
+                <div class="form-group">
+                    <label for="fuentes_datos">Fuentes de datos:</label>
+                    <input type="text" id="fuentes_datos" name="fuentes_datos" placeholder="Fuentes de información utilizadas">
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha_revision">Fecha de próxima revisión:</label>
+                    <input type="date" id="fecha_revision" name="fecha_revision">
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="action-buttons">
+                <button type="button" id="saveBtn" class="save-button">💾 Guardar Datos</button>
+                <button type="button" id="exportBtn" class="export-button">📄 Exportar PDF</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
